@@ -34,49 +34,37 @@
    </head>
    <!-- body -->
    <body class="main-layout">
-
-{%load static%}
 {%include 'includes/navbar.html'%}
+{%load static%}
 {%block content%}
-<!-- our tour -->
-      <div id="blog" class="blog">
+ <!-- about -->
+      <div id="about" class="about">
          <div class="container">
             <div class="row">
-
-               <div class="col-md-12">
+               <div class="col-md-12 ">
                   <div class="titlepage">
-                     <h2>Our Tours</h2>
-                     <span></span>
+                     <h2>About  our travel agency</h2>
+                     <span> fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,</span>
                   </div>
                </div>
             </div>
-            <div class="row">
-                {%for tour in tour%} <!-- start loop -->
-               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                  <div class="blog-box">
-                     <figure><img src="{{tour.images.url}}" alt="#"/>
-                        <span>{{tour.price}} USD per person</span>
-                     </figure>
-
-                     <div class="travel">
-                        <span>Post  By :  Aswan Tour</span>
-
-                     </div>
-                     <li><a href="{{tour.get_url}}"> <h3>{{tour.tour_name}}</h3></a></li>
-                     <p>{{tour.description}}</p>
-
-                  </div>
-
-               </div>
-            {%endfor%}
-            </div>
-
          </div>
-
+         <div class="bg">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                     <div class="about-box">
+                        <p> <span>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure thereThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there</span></p>
+                        <div class="palne-img-area">
+                           <img src="{%static 'images/plane-img.png'%}" alt="images">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <a href="#">Read More</a>
+         </div>
       </div>
-      <!-- end our tour -->
+      <!-- end about -->
 {%endblock%}
-
-{%include 'includes/footer.html'%}
-
-
+   {%include 'includes/footer.html'%}

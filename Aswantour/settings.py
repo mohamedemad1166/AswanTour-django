@@ -24,7 +24,11 @@ SECRET_KEY = 'django-insecure-f=!ktt09quf&o8(8nsi!sd9l7ar0(%#sa654!#2a3fr1n69zpk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'be87f4ef20f1eb'
+EMAIL_HOST_PASSWORD = '********68a8'
+EMAIL_PORT = '2525'
 
 # Application definition
 
@@ -38,6 +42,8 @@ INSTALLED_APPS = [
     'category',
     'froala_editor',
     'tour',
+    'contactform',
+
 ]
 
 MIDDLEWARE = [

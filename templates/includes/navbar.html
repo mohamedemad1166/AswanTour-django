@@ -36,8 +36,8 @@
                         <div class="limit-box">
                            <nav class="main-menu">
                               <ul class="menu-area-main">
-                                 <li class="active"> <a href="#">Home</a> </li>
-                                 <li> <a href="#about">About</a> </li>
+                                 <li class="active"> <a href="{%url 'home'%}">Home</a> </li>
+                                 <li> <a href="{%url  'about'%}">About</a> </li>
                                 {%for category in links %}
                                  <li><a href="{{category.get_url}}"> {{category.category_name}}</a></li>
                                  {%endfor%}

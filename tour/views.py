@@ -1,6 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.core.mail import send_mail
 from tour.models import Tours
 from category.models import Category
+from .forms import ContactForm
+from django.template.loader import render_to_string
 
 
 # Create your views here.
@@ -18,10 +21,18 @@ def tours(request, category_slug=None):
 
 
 def tour_detail(request, category_slug, tour_slug):
+    if request.method == 'POST':  # form validation
+        form = ContactForm(request.Post)
+
+
     try:
         single_tour = Tours.objects.get(category__slug=category_slug, slug=tour_slug)
     except Exception as e:
         raise e
 
-    context = {'single_tour': single_tour}
+    context = {'single_tour': single_tour, 'form': form}
     return render(request, 'includes/tour_detail.html', context)
+
+
+def about(request):
+    return render(request, 'includes/about.html')
